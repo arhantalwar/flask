@@ -1,6 +1,9 @@
+import os
 from flask import Flask, request, jsonify
 import pytesseract
 from PIL import Image
+
+os.environ['TESSDATA_PREFIX'] = '/usr/share/tesseract-ocr/4.00/tessdata'
 
 app = Flask(__name__)
 
@@ -15,7 +18,7 @@ def ocr():
 
     # Call your OCR script to extract text from the image file
     extracted_text = "YESSSSSSIR"
-    text = pytesseract.image_to_string(image)
+    text = pytesseract.image_to_string(image, lang='eng')
 
     # Return the extracted text as a JSON response
     return jsonify({'text': text})
