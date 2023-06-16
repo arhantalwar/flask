@@ -3,4 +3,3 @@ gunicorn>=20.1.0
 pytesseract>=0.3.8
 pillow>=8.4.0
 tesseract-ocr>=4.1.1
-tesseract-ocr-eng>=4.0.0
